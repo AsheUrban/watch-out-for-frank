@@ -1,4 +1,4 @@
-import bizFunc from './js/biz-func.js';
+import Player from './js/player.js';
 import $ from 'jquery';
 // import 'bootstrap';
 // import 'bootstrap/dist/css/bootstrap.min.css';
