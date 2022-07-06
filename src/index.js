@@ -4,9 +4,9 @@ import ControlInput from '../src/js/controls.js';
 // import Enemy from '../src/js/enemy.js';
 
 // import $ from 'jquery';
-// import 'bootstrap';
-// import 'bootstrap/dist/css/bootstrap.min.css';
-// import './css/styles.css';
+import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './css/styles.css';
 
 if (typeof window !== 'undefined') { //You are on the browser; can use window here
   window.addEventListener("load", function(){
