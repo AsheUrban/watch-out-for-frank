@@ -34,9 +34,9 @@ if (typeof window !== 'undefined') { //You are on the browser; can use window he
       lastTime = timeStamp;
       ctx.clearRect(0,0,canvas.width, canvas.height);
       background.draw(ctx);
-      // background.update();
+      background.update();
       player.draw(ctx);
-      // player.update(input, deltaTime);
+      player.update(input, deltaTime);
       displayStatus(ctx);
       requestAnimationFrame(animationLoop);
     }
