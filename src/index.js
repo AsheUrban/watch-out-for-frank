@@ -12,8 +12,8 @@ if (typeof window !== 'undefined') { //You are on the browser; can use window he
   window.addEventListener("load", function(){
     const canvas = document.getElementById("canvas-1");
     const ctx = canvas.getContext("2d");
-    canvas.width = 800;
-    canvas.height = 720;
+    canvas.width = 1500;
+    canvas.height = 820;
 
     const input = new ControlInput();
     const player = new Player(canvas.width, canvas.height);
@@ -28,7 +28,7 @@ if (typeof window !== 'undefined') { //You are on the browser; can use window he
     function animationLoop(){
       ctx.clearRect(0,0,canvas.width, canvas.height);
       background.draw(ctx);
-      //background.update();
+      background.update();
       player.draw(ctx);
       player.update(input);
       requestAnimationFrame(animationLoop);

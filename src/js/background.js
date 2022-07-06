@@ -6,9 +6,9 @@ export default class Background {
     this.gameHeight = gameHeight;
     this.image = document.getElementById('backgroundImage');
     this.x = 0;
-    this.y = 1; 
-    this.width = 1200;
-    this.height = 1060;
+    this.y = 0; 
+    this.width = 1500;
+    this.height = 1200;
     this.speed = 2;
   }
   draw(context){
