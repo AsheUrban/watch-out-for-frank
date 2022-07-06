@@ -21,11 +21,10 @@ if (typeof window !== 'undefined') { //You are on the browser; can use window he
     const background = new Background(canvas.width, canvas.height);
 
     // Display score || Game Over text
-
     function displayStatus(context){
       context.fillStyle = "orange";
       context.font = "40px Helvetica";
-      context.fillText("Score: " + score, 20, 50);
+      context.fillText("SCORE: " + score, 20, 50);
     }
 
     let lastTime = 0;
@@ -35,12 +34,11 @@ if (typeof window !== 'undefined') { //You are on the browser; can use window he
       lastTime = timeStamp;
       ctx.clearRect(0,0,canvas.width, canvas.height);
       background.draw(ctx);
-      background.update();
+      // background.update();
       player.draw(ctx);
-      player.update(input, deltaTime);
+      // player.update(input, deltaTime);
       displayStatus(ctx);
       requestAnimationFrame(animationLoop);
-
     }
     animationLoop(0);
   });
