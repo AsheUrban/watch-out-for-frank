@@ -4,20 +4,22 @@ export default class Player {
   constructor(gameWidth, gameHeight) {
     this.gameWidth = gameWidth;
     this.gameHeight = gameHeight;
-    this.width = 300;
-    this.height = 300;
+    this.width = 100;
+    this.height = 125;
     this.x = 0;
     this.y = this.gameHeight - this.height;
     this.image = document.getElementById("playerImage");
     this.speed= 0;
     this.vy = 0;
     this.weight = 1;
+    this.frameX = 0;
+    this.frameY = 0;
   }
 
   draw(context){
     // context.fillStyle = "white";
     // context.fillRect(this.x, this.y, this.width, this.height);
-    context.drawImage(this.image, this.x, this.y, this.width, this.height);
+    context.drawImage(this.image, this.frameX * this.width, this.frameY * this.height, this.width, this.height, this.x, this.y, this.width, this.height);
   }
 
   update(input){
