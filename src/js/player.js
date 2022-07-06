@@ -13,7 +13,11 @@ export default class Player {
     this.vy = 0;
     this.weight = 1;
     this.frameX = 0;
+    this.maxFrame = 21;
     this.frameY = 0;
+    this.fps = 20;
+    this.frameTimer = 0;
+    this.frameInterval = 1000/this.fps;
   }
 
   draw(context){
@@ -22,8 +26,23 @@ export default class Player {
     context.drawImage(this.image, this.frameX * this.width, this.frameY * this.height, this.width, this.height, this.x, this.y, this.width, this.height);
   }
 
-  update(input){
-      
+  // update(deltaTime) {
+    // this.x -= this.speed;
+
+  // }
+
+  update(input, deltaTime){
+    //sprite animation
+    if (this.frameTimer > this.frameInterval) {
+      if (this.frameX >= this.maxFrame) this.frameX = 0;
+      else this.framex++;
+      this.frameTimer = 0;
+    } else { 
+      this.frameTimer += deltaTime;
+    }
+    
+
+    //sprite controls
     if (input.keys.indexOf("ArrowRight") > -1) {
       this.speed = 5;
     } else if (input.keys.indexOf("ArrowLeft") > -1) {
