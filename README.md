@@ -17,12 +17,12 @@ Following along with Frank's Labratory's tutorial, Javascript Side Scroller Game
 
 Our goal was to create a simple and classic style game with a space theme, that included input controls, sprite animation, collision detection, scoring, and a level up challenge or interaction. 
 
-###MVP for our purposes was a game that:
+### MVP for our purposes was a game that:
 * _sidescrolls_
 * _animates characters using spritesheets_
 * _detects collisions between the player and enemy sprites_
 
-###Stretch goals include:
+### Stretch goals include:
 * _additional animations for jump and weapons_
 * _functional scoring_
 * _game over screen/message_
