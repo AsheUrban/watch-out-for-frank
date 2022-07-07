@@ -33,7 +33,7 @@ if (typeof window !== 'undefined') { //You are on the browser; can use window he
       }
       enemies.forEach(enemy => {
         enemy.draw(ctx);
-        enemy.update();
+        enemy.update(deltaTime);
       });
     }
 
