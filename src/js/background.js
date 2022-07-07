@@ -8,12 +8,12 @@ export default class Background {
     this.x = 0;
     this.y = 0; 
     this.width = 1500;
-    this.height = 1200;
+    this.height = 1250;
     this.speed = 2;
   }
   draw(context){
     context.drawImage(this.image, this.x, this.y, this.width, this.height);
-    context.drawImage(this.image, this.x + this.width, this.y, this.width, this.height);
+    context.drawImage(this.image, this.x + this.width - this.speed, this.y, this.width, this.height);
   }
   update(){
     this.x -= this.speed;

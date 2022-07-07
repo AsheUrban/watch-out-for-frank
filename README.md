@@ -1,17 +1,19 @@
-# (Application Name)
+# Watch Out For Frank!
 
-#### (Brief Description of Application)
+#### Move Frank forward in a traditional style side scrolling game! Beware, alien monsters abound, jump to miss them and acquire points to win.
 
-#### By (Your Name Here)
+#### By Justin Peters, Ashe Urban, Daniel Ware, Derrak Richard
 
 ## Technologies Used
 
-* _List all_
-* _the major technologies_
-* _you used in your project_
-* _here_
+* _JavaScript_
+* _CSS_
+* _HTML_
+* _Markdown_
 
 ## Description
+
+
 
 ## Setup/Installation Requirements
 
@@ -27,5 +29,7 @@
 * _should go here_
 
 ## License
+
+* MIT
 
 ## Contact Information

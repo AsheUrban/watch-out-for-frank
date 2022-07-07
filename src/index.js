@@ -5,8 +5,6 @@ import Enemy from '../src/js/enemy.js';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
-// import $ from 'jquery';
-
 
 if (typeof window !== 'undefined') { //You are on the browser; can use window here
   window.addEventListener("load", function(){
@@ -14,12 +12,15 @@ if (typeof window !== 'undefined') { //You are on the browser; can use window he
     const ctx = canvas.getContext("2d");
     canvas.width = 1500;
     canvas.height = 820;
+
     let enemies = [];
+    let score = 0
+
 
     const input = new ControlInput();
     const player = new Player(canvas.width, canvas.height);
     const background = new Background(canvas.width, canvas.height);
-    // const enemy1 = new Enemy(canvas.width, canvas.height);
+    const enemy1 = new Enemy(canvas.width, canvas.height);
       
     // Animating, adding && removing enemies
     function handleEnemies(deltaTime){
@@ -36,28 +37,38 @@ if (typeof window !== 'undefined') { //You are on the browser; can use window he
       });
     }
 
-    // Display score || Game Over text
-     // function displayStatus(){
-       // }
     let lastTime = 0;
     let enemyTimer = 0;
     let enemyInterval = 1000;
     let randomEnemyInterval = Math.random() * 1000 + 500;
 
+
+    // Display score || Game Over text
+    function displayStatus(context){
+      context.fillStyle = "orange";
+      context.font = "40px Helvetica";
+      context.fillText("SCORE: " + score, 20, 50);
+    }
+
     function animationLoop(timeStamp){
       const deltaTime = timeStamp - lastTime;
       lastTime = timeStamp;
-      console.log(deltaTime);
+
+
       ctx.clearRect(0,0,canvas.width, canvas.height);
       background.draw(ctx);
       background.update();
       player.draw(ctx);
+
       player.update(input);
       // enemy1.draw(ctx);
       // enemy1.update();
       handleEnemies(deltaTime);
-      requestAnimationFrame(animationLoop);
 
+      player.update(input, deltaTime);
+      displayStatus(ctx);
+
+      requestAnimationFrame(animationLoop);
     }
     animationLoop(0);
   });
