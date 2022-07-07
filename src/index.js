@@ -14,7 +14,8 @@ if (typeof window !== 'undefined') { //You are on the browser; can use window he
     canvas.height = 820;
 
     let enemies = [];
-    let score = 0
+    let score = 0;
+    let gameOver = false;
 
 
     const input = new ControlInput();
@@ -48,6 +49,12 @@ if (typeof window !== 'undefined') { //You are on the browser; can use window he
       context.fillStyle = "orange";
       context.font = "40px Helvetica";
       context.fillText("SCORE: " + score, 20, 50);
+      if (gameOver === true){
+        alert("gameOver");
+        context.textAlign = 'center';
+        context.fillStyle = 'black';
+        context.fillText('GAME OVER, try again!', canvas.width/2, 200);
+      }
     }
 
     function animationLoop(timeStamp){
@@ -60,15 +67,12 @@ if (typeof window !== 'undefined') { //You are on the browser; can use window he
       background.update();
       player.draw(ctx);
 
-      player.update(input);
-      // enemy1.draw(ctx);
-      // enemy1.update();
       handleEnemies(deltaTime);
-
-      player.update(input, deltaTime);
+      
       displayStatus(ctx);
-
-      requestAnimationFrame(animationLoop);
+      player.update(input,deltaTime, enemies);
+      
+      if (!gameOver) requestAnimationFrame(animationLoop);
     }
     animationLoop(0);
   });

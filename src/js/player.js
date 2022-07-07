@@ -21,12 +21,28 @@ export default class Player {
   }
 
   draw(context){
-    // context.fillStyle = "white";
-    // context.fillRect(this.x, this.y, this.width, this.height);
+    context.strokeStyle = 'white';
+    context.strokeRect(this.x, this.y , this.width, this.height);
+    context.beginPath();
+    context.arc(this.x + this.width/2, this.y +this.height/2, this.width/1.5, 0, Math.PI *2);
+    context.stroke();
+    // context.strokeStyle = 'blue';
+    // context.beginPath();
+    // context.arc(this.x , this.y, this.width/1.5, 0, Math.PI *2);
+    // context.stroke();
     context.drawImage(this.image, this.frameX * this.width, this.frameY * this.height, this.width, this.height, this.x, this.y, this.width, this.height);
   }
 
-  update(input, deltaTime){
+  update(input, deltaTime, enemies){
+    //collision detection
+    enemies.forEach(enemy => {
+      const dx = (enemy.x + enemy.width/1.5) - (this.x + this.width/2);
+      const dy = ((enemy.y +10) + (enemy.height/2)-10) - (this.y + this.height/2);
+      const distance = Math.sqrt(dx * dx + dy * dy);
+      if (distance < enemy.width/2 + this.width/2){
+        gameOver= true;
+      } 
+    });
     //sprite animation
     if (this.frameTimer > this.frameInterval) {
       if (this.frameX >= this.maxFrame) this.frameX = 0;
@@ -37,16 +53,29 @@ export default class Player {
     }
 
     //sprite controls
-    if (input.keys.indexOf("ArrowRight") > -1) {
+    if (input.keys.indexOf('ArrowUp') > -1 && this.onGround()) {
+      this.vy -= 30;
+    } else if (input.keys.indexOf("ArrowRight") > -1) {
       this.speed = 5;
     } else if (input.keys.indexOf("ArrowLeft") > -1) {
       this.speed = -5;
-    } else if (input.keys.indexOf('ArrowUp') > -1 && this.onGround()) {
-      this.vy -= 30;
     } 
     else {
       this.speed = 0;
     }
+
+
+        // //sprite controls
+        // if (input.keys.indexOf("ArrowRight") > -1) {
+        //   this.speed = 5;
+        // } else if (input.keys.indexOf("ArrowLeft") > -1) {
+        //   this.speed = -5;
+        // } else if (input.keys.indexOf('ArrowUp') > -1 && this.onGround()) {
+        //   this.vy -= 30;
+        // } 
+        // else {
+        //   this.speed = 0;
+        // }
 
     //horizontal movement
     this.x += this.speed;
