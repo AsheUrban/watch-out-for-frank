@@ -30,4 +30,6 @@
 
 ## License
 
+* MIT
+
 ## Contact Information
