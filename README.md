@@ -13,7 +13,7 @@
 
 ## Description
 
-Following along with Frank's Labratory's tutorial, Javascript Side Scroller Game Tutorial, our team delved into learning the basics of coding a sidescroller using Javascript, HTML, and CSS. 
+Following along with Frank's Laboratory's tutorial, JavaScript Side Scroller Game Tutorial, our team delved into learning the basics of coding a sidescroller using JavaScript, HTML, and CSS. 
 
 Our goal was to create a simple and classic style game with a space theme, that included input controls, sprite animation, collision detection, scoring, and a level up challenge or interaction. 
 
