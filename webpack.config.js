@@ -10,7 +10,8 @@ module.exports = {
   },
   devtool: "eval-source-map",
   devServer: {
-    contentBase: "./dist"
+    // contentBase: "./dist"
+    static: './'
   },
   plugins: [
     new CleanWebpackPlugin(),

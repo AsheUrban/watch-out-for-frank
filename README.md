@@ -33,8 +33,8 @@ _Link to Tutorial:_ https://www.youtube.com/watch?v=7JtLHJbm0kA&t=2247s
 ## Setup/Installation Requirements
 
 * _clone or download responsitory to your local_
-* _run nmp install_
-* _run nmp run build/start_
+* _run npm install_
+* _run npm run build/start_
 
 ## Known Bugs
 
