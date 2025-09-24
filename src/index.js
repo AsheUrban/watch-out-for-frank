@@ -21,7 +21,7 @@ if (typeof window !== 'undefined') { //You are on the browser; can use window he
     const input = new ControlInput();
     const player = new Player(canvas.width, canvas.height);
     const background = new Background(canvas.width, canvas.height);
-    const enemy1 = new Enemy(canvas.width, canvas.height);
+    // const enemy1 = new Enemy(canvas.width, canvas.height);
       
     // Animating, adding && removing enemies
     function handleEnemies(deltaTime){

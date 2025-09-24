@@ -18,6 +18,7 @@ export default class Player {
     this.fps = 20;
     this.frameTimer = 0;
     this.frameInterval = 1000/this.fps;
+    // this.gameOver = false; // gameover is currently undefined
   }
 
   draw(context){
@@ -40,7 +41,7 @@ export default class Player {
       const dy = ((enemy.y +10) + (enemy.height/2)-10) - (this.y + this.height/2);
       const distance = Math.sqrt(dx * dx + dy * dy);
       if (distance < enemy.width/2 + this.width/2){
-        gameOver= true;
+        gameOver= true; // gameOver is currently undefined, however this line prevents the game from continuing after a collision
       } 
     });
     //sprite animation
@@ -64,18 +65,17 @@ export default class Player {
       this.speed = 0;
     }
 
-
-        // //sprite controls
-        // if (input.keys.indexOf("ArrowRight") > -1) {
-        //   this.speed = 5;
-        // } else if (input.keys.indexOf("ArrowLeft") > -1) {
-        //   this.speed = -5;
-        // } else if (input.keys.indexOf('ArrowUp') > -1 && this.onGround()) {
-        //   this.vy -= 30;
-        // } 
-        // else {
-        //   this.speed = 0;
-        // }
+    // //sprite controls
+    // if (input.keys.indexOf("ArrowRight") > -1) {
+    //   this.speed = 5;
+    //     } else if (input.keys.indexOf("ArrowLeft") > -1) {
+    //       this.speed = -5;
+    //     } else if (input.keys.indexOf('ArrowUp') > -1 && this.onGround()) {
+    //       this.vy -= 30;
+    //     } 
+    //     else {
+    //       this.speed = 0;
+    //   }
 
     //horizontal movement
     this.x += this.speed;

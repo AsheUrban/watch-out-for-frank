@@ -24,12 +24,12 @@ export default class Enemy {
   }
   update(deltaTime){
     if (this.frameTimer > this.frameInterval){
-    if (this.frameX >= this.maxFrame) this.frameX =0;
-    else this.frameX++;
-    this.frameTimer = 0;
-  } else {
-    this.frameTimer += deltaTime;
-  }
+      if (this.frameX >= this.maxFrame) this.frameX =0;
+      else this.frameX++;
+      this.frameTimer = 0;
+    } else {
+      this.frameTimer += deltaTime;
+    }
     this.x -= this.speed;
   }
 
