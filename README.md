@@ -1,53 +1,66 @@
-# Watch Out For Frank!
+# _Watch Out For Frank!_
 
-#### Move Frank forward in a traditional style side scrolling game! Beware, alien monsters abound, jump to miss them and acquire points to win.
-
-#### By Justin Peters, Ashe Urban, Daniel Ware, && Derrak Richard
+#### By _Ashe Urban, Justin Peters, Daniel Ware, and Derrak Richard_
 
 ## Technologies Used
-
 * _JavaScript_
-* _CSS_
 * _HTML_
+* _CSS_
 * _Markdown_
 
 ## Description
+_Watch Out For Frank!_ is a 2D side-scrolling browser game created in **JavaScript**, **HTML**, and **CSS**.  
+Inspired by **Frank’s Laboratory’s “JavaScript Side Scroller Game Tutorial,”** the project was a hands-on exploration of fundamental game development concepts — including sprite animation, collision detection, user input handling, and state management.
 
-Following along with Frank's Laboratory's tutorial, JavaScript Side Scroller Game Tutorial, our team delved into learning the basics of coding a sidescroller using JavaScript, HTML, and CSS. 
+Our goal was to recreate the nostalgic feel of classic arcade platformers while adding a modern, space-themed twist with unique player and enemy sprites, jump mechanics, and scoring logic.
 
-Our goal was to create a simple and classic style game with a space theme, that included input controls, sprite animation, collision detection, scoring, and a level up challenge or interaction. 
+**Tutorial Reference:**  
+[JavaScript Side Scroller Game Tutorial (Frank’s Laboratory)](https://www.youtube.com/watch?v=7JtLHJbm0kA&t=2247s)
 
-### MVP for our purposes was a game that:
-* _sidescrolls_
-* _animates characters using spritesheets_
-* _detects collisions between the player and enemy sprites_
+### Core Features
+* Continuous side-scrolling environment  
+* Animated characters using sprite sheets  
+* Collision detection between player and enemies  
+* Responsive keyboard input for player control  
+* Points awarded for successful evasion or survival time
 
-### Stretch goals include:
-* _additional animations for jump and weapons_
-* _functional scoring_
-* _game over screen/message_
-* _level up challenge/object interaction_
-
-_Link to Tutorial:_ https://www.youtube.com/watch?v=7JtLHJbm0kA&t=2247s
+### Stretch Goals
+* Additional jump and weapon animations  
+* Functional scoring and UI display  
+* Game over and restart screens  
+* Level progression or collectible items
 
 ## Setup/Installation Requirements
+* Clone or download this repository:
+  ```bash
+  git clone https://github.com/AsheUrban/Watch-Out-For-Frank.git
+  ```
+* Navigate into the project directory:
+  ```bash
+  cd Watch-Out-For-Frank
+  ```
+* Install dependencies:
+  ```bash
+  npm install
+  ```
+* Build and run the game locally:
+  ```bash
+  npm run build
+  npm start
+  ```
+* Open your browser and navigate to:
+  ```
+  http://localhost:8080/
+  ```
 
-* _clone or download responsitory to your local_
-* _run npm install_
-* _run npm run build/start_
-
-## Known Bugs
-
-* _separation of logic makes it difficult to share variables and currently is preventing us from developing a functional scoring method_
-* _no end game screen when player collides with enemy_
-* _game freezes when player collides with enemy_
+## Known Issues
+* Warning 'gameOver' is not defined at runtime (close to use program).
+* Logic separation currently prevents shared variables, impacting scoring functionality.  
+* No dedicated end-game screen when the player collides with an enemy.  
+* Game may freeze upon collision in some builds.
 
 ## License
+_This software is provided for educational purposes only and is not intended for commercial use._
 
-* MIT
-
-## Contact Information
-
-_Please contact us with any questions or contribuitions, ashe@goldentongue.com_
-
-Copyright(c) July 2022 Ashe Urban, Justin Peters, Daniel Ware, Derrak Richard
+Copyright (c) _2022_
+_Ashe Urban, Justin Peters, Daniel Ware, and Derrak Richard_
