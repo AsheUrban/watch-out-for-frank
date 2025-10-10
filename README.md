@@ -54,7 +54,7 @@ Our goal was to recreate the nostalgic feel of classic arcade platformers while 
   ```
 
 ## Known Issues
-* Warning 'gameOver' is not defined at runtime (close to use program).
+* Warning 'gameOver' is not defined.
 * Logic separation currently prevents shared variables, impacting scoring functionality.  
 * No dedicated end-game screen when the player collides with an enemy.  
 * Game may freeze upon collision in some builds.
